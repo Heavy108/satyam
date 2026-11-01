@@ -48,6 +48,7 @@ const filters = [
   "DEVELOPMENT",
   "UI/UX",
   "REPORT DESIGN",
+  "PRODUCT"
 ];
 
 export default function TheRest() {

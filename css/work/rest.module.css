@@ -104,8 +104,9 @@
   text-transform: uppercase;
   cursor: pointer;
   transition: all 0.2s ease;
-  margin-right: -1px;
-  margin-bottom: -1px;
+  /* margin-right: -1px;
+  margin-bottom: -1px; */
+  margin:0.125rem;
 }
 
 .filterButton:hover:not(.activeFilter) {
