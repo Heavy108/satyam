@@ -9,7 +9,7 @@
 
 .gridRow, .gridMainRow {
   display: grid;
-  grid-template-columns: 30px 1fr 30px;
+  grid-template-columns: 30px minmax(0, 1fr) 30px;
 }
 
 .gridRow {
@@ -67,6 +67,8 @@
   font-size: 1.25rem;
   color: var(--foreground);
   margin-right: 0.75rem;
+  display: flex;
+  align-items: center;
 }
 
 .searchInput {
@@ -118,13 +120,17 @@
 
 .cardsGrid {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: minmax(0, 1fr);
+  width: 100%;
+  min-width: 0;
 }
 
 .card {
   display: flex;
   flex-direction: column;
   border-bottom: 1px solid var(--border-color);
+  min-width: 0;
+  width: 100%;
 }
 
 .imageWrapper {
@@ -132,26 +138,32 @@
   width: 100%;
   aspect-ratio: 4 / 3;
   background-color: #D3D3D3;
+  overflow: hidden;
 }
 
 .projectImage {
   object-fit: cover;
+  cursor: pointer;
+  transition: transform 0.4s ease;
+}
+.projectImage:hover {
+  transform: scale(1.05);
 }
 
 .cardFooter {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding: 1.5rem;
   gap: 1.5rem;
   background-color: var(--background);
+  flex: 1;
+  min-width: 0;
 }
 
-.cardInfo {
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
+.cardTop {
   min-width: 0;
-  flex: 1;
+  width: 100%;
 }
 
 .projectTitle {
@@ -162,12 +174,23 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  line-height: 1.2;
+}
+
+.cardBottomRow {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: flex-start;
+  min-width: 0;
+  width: 100%;
 }
 
 .cardTags {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+  align-items: center;
 }
 
 .tag {
@@ -200,6 +223,7 @@
   justify-content: center;
   transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .rollText {
@@ -231,7 +255,7 @@
 
 @media only screen and (min-width: 768px) {
   .gridRow, .gridMainRow {
-    grid-template-columns: minmax(80px, 10vw) 1fr minmax(80px, 10vw);
+    grid-template-columns: minmax(80px, 10vw) minmax(0, 1fr) minmax(80px, 10vw);
   }
 
   .header {
@@ -246,10 +270,11 @@
     padding: 2rem 4rem;
   }
 
-  .cardFooter {
+  .cardBottomRow {
     flex-direction: row;
     justify-content: space-between;
-    align-items: flex-end;
+    align-items: center;
+    gap: 1.5rem;
   }
 
   .viewCaseStudy {
@@ -257,22 +282,23 @@
   }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1024px) {
   .gridRow, .gridMainRow {
-    grid-template-columns: minmax(80px, 10vw) 1fr 1fr minmax(80px, 10vw);
+    grid-template-columns: minmax(80px, 10vw) minmax(0, 1fr) minmax(0, 1fr) minmax(80px, 10vw);
   }
 
   .header {
     grid-column: 2 / 4;
   }
+
   .projectTitle {
-    font-size: 1.75rem;
+    font-size: clamp(1.25rem, 1.8vw, 1.75rem);
   }
 
   .toolbarInner {
     grid-column: 2 / 4;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .searchContainer {
@@ -282,7 +308,8 @@
 
   .cardsGrid {
     grid-column: 2 / 4;
-    grid-template-columns: 1fr 1fr;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .card:nth-child(odd) {

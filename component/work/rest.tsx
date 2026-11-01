@@ -3,43 +3,36 @@ import React, { useState } from "react";
 import Image from "next/image";
 import styles from "@/css/work/rest.module.css";
 
-import svcw_logo from "@/assets/svcwp/logo.png";
 import svcwp_main from "@/assets/work/1.png";
-import sp_logo from "@/assets/studiopatang/logo.png";
 import sp_main from "@/assets/work/2.png";
-import form from "@/assets/form/logo.png";
 import form_main from "@/assets/work/4.png";
-import jv_logo from "@/assets/jv/logo.png";
 import jv_main from "@/assets/work/3.png";
-import scripture_logo from "@/assets/scripture/logo.png";
 import scripture_main from "@/assets/scripture/main.png";
-
-
 
 const allProjects = [
   {
     id: 1,
-    image: svcwp_main,
-    tags: ["WEBSITE DESIGN", "DEVELOPMENT"],
-    title: "Sadhu vaswani center world peace",
-  },
-  {
-    id: 2,
     image: sp_main,
-    tags: ["UX/UI", "DEVELOPMENT"],
+    tags: ["UI/UX", "DEVELOPMENT"],
     title: "Studio Patang",
   },
   {
-    id: 3,
+    id: 2,
     image: jv_main,
     tags: ["WEBSITE DESIGN", "DEVELOPMENT"],
     title: "JV Venture",
   },
   {
-    id: 4,
+    id: 3,
     image: form_main,
     tags: ["DEVELOPMENT", "PRODUCT"],
     title: "Form AI",
+  },
+  {
+    id: 4,
+    image: svcwp_main,
+    tags: ["WEBSITE DESIGN", "DEVELOPMENT"],
+    title: "Sadhu vaswani center world peace",
   },
   {
     id: 5,
@@ -47,8 +40,8 @@ const allProjects = [
     tags: ["WEBSITE DESIGN", "DEVELOPMENT"],
     title: "Scripture",
   },
-
 ];
+
 const filters = [
   "ALL",
   "WEBSITE DESIGN",
@@ -63,7 +56,9 @@ export default function TheRest() {
 
   const filteredProjects = allProjects.filter((project) => {
     const matchesFilter =
-      activeFilter === "ALL" || project.tags.includes(activeFilter);
+      activeFilter === "ALL" ||
+      project.tags.includes(activeFilter) ||
+      (activeFilter === "UI/UX" && project.tags.includes("UX/UI"));
     const matchesSearch = project.title
       .toLowerCase()
       .includes(searchQuery.toLowerCase());
@@ -147,8 +142,10 @@ export default function TheRest() {
                 />
               </div>
               <div className={styles.cardFooter}>
-                <div className={styles.cardInfo}>
+                <div className={styles.cardTop}>
                   <h3 className={styles.projectTitle}>{project.title}</h3>
+                </div>
+                <div className={styles.cardBottomRow}>
                   <div className={styles.cardTags}>
                     {project.tags.map((tag) => (
                       <span key={tag} className={styles.tag}>
@@ -156,13 +153,13 @@ export default function TheRest() {
                       </span>
                     ))}
                   </div>
+                  <button className={styles.viewCaseStudy}>
+                    <span className={styles.rollText}>
+                      <span>VIEW CASE STUDY</span>
+                      <span aria-hidden="true">VIEW CASE STUDY</span>
+                    </span>
+                  </button>
                 </div>
-                <button className={styles.viewCaseStudy}>
-                  <span className={styles.rollText}>
-                    <span>VIEW CASE STUDY</span>
-                    <span aria-hidden="true">VIEW CASE STUDY</span>
-                  </span>
-                </button>
               </div>
             </div>
           ))}
