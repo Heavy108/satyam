@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import styles from "@/css/about/experience.module.css";
-import wiseImg from "@/assets/wise.png";
+import wiseImg from "@/assets/experience.png";
 import Link from "next/link";
 
 export default function ExperienceSection(): React.JSX.Element {
@@ -11,16 +11,31 @@ export default function ExperienceSection(): React.JSX.Element {
     <section className={styles.container}>
       <div className={styles.leftColumn}>
         <div className={styles.experienceItem}>
-          <span className={styles.date}>Feb 2025 - Present</span>
+          <span className={styles.date}>Oct 2025 - Present</span>
           <div className={styles.jobInfo}>
-            <h4 className={styles.jobTitle}>Visual Communication Designer</h4>
+            <h4 className={styles.jobTitle}>
+              Application Database administrator
+            </h4>
             <span className={styles.companyInfo}>
               <Link
-                href="https://whatifdesign.co/"
+                href="https://www.voiscentre.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                What if Design
+                VOIS
+              </Link>
+              - Pune - Full-time
+            </span>
+          </div>
+        </div>
+
+        <div className={styles.experienceItem}>
+          <span className={styles.date}>July 2025 - Oct 2025</span>
+          <div className={styles.jobInfo}>
+            <h4 className={styles.jobTitle}>Full Stack Developer Intern </h4>
+            <span className={styles.companyInfo}>
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                NyaySetu AI Pvt. Ltd
               </Link>
               - Remote - Full-time
             </span>
@@ -28,40 +43,19 @@ export default function ExperienceSection(): React.JSX.Element {
         </div>
 
         <div className={styles.experienceItem}>
-          <span className={styles.date}>June 2024 - Jan 2025</span>
+          <span className={styles.date}>July 2024 - June 2025</span>
           <div className={styles.jobInfo}>
-            <h4 className={styles.jobTitle}>Textile Designer</h4>
+            <h4 className={styles.jobTitle}>Software Developer</h4>
             <span className={styles.companyInfo}>
-              <Link
-                href="https://kriyastudio.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Kriya Studio
+              <Link href="#" target="_blank" rel="noopener noreferrer">
+                Self-Employed
               </Link>
-              - Delhi - Full-time
+              - Remote - Freelance
             </span>
           </div>
         </div>
 
-        <div className={styles.experienceItem}>
-          <span className={styles.date}>June 2023 - July 2023</span>
-          <div className={styles.jobInfo}>
-            <h4 className={styles.jobTitle}>Textile Design Intern</h4>
-            <span className={styles.companyInfo}>
-              <Link
-                href="https://www.swadeshonline.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Swadesh
-              </Link>
-              - Kolkata - Internship
-            </span>
-          </div>
-        </div>
-
-        <div className={styles.experienceItem}>
+        {/* <div className={styles.experienceItem}>
           <span className={styles.date}>Dec 2020 - March 2021</span>
           <div className={styles.jobInfo}>
             <h4 className={styles.jobTitle}>Graphic Design Intern</h4>
@@ -76,7 +70,7 @@ export default function ExperienceSection(): React.JSX.Element {
               - Remote - Internship
             </span>
           </div>
-        </div>
+        </div> */}
       </div>
 
       <div className={styles.rightColumn}>

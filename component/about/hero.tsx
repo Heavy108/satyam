@@ -1,10 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import styles from "@/css/about/hero.module.css";
-
-import worksImg from "@/assets/abouthero.png";
 
 export default function AboutSection(): React.JSX.Element {
   return (
@@ -13,18 +10,18 @@ export default function AboutSection(): React.JSX.Element {
 
       <div className={styles.textContent}>
         <span className={styles.tagline}>THE</span>
-        <h2 className={styles.heading}>
-          designer.     
-        </h2>
+        <h2 className={styles.heading}>developer.</h2>
       </div>
 
-      <div className={styles.imageWrapper}>
-        <Image
-          src={worksImg}
-          alt="Digital drawing on an iPad"
-          width={1260}
-          height={800}
-          className={styles.image}
+      <div className={styles.videoWrapper}>
+        <video
+          src="/about_video.mp4" /* Replace with your actual video path in the public folder */
+          autoPlay
+          loop
+          muted
+          playsInline
+          className={styles.video}
+          aria-label="Digital drawing on an iPad"
         />
       </div>
     </section>
