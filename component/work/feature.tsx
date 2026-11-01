@@ -6,6 +6,7 @@ import styles from "@/css/work/feature.module.css";
 
 // TODO: Replace with your actual laptop image path
 import laptopImg from "@/assets/work/featured.png";
+import Link from "next/link";
 
 export default function FeaturedSection(): React.JSX.Element {
   return (
@@ -54,9 +55,30 @@ export default function FeaturedSection(): React.JSX.Element {
           {/* Right: Text Column */}
           <div className={styles.textCol}>
             <div className={styles.textContent}>
-              <h3 className={styles.projectTitle}>
-                Sadhu Vaswani Center for World Peace
-              </h3>
+              {/* New wrapper to align the title and icon side-by-side */}
+              <div className={styles.titleWrapper}>
+                <h3 className={styles.projectTitle}>
+                  Sadhu Vaswani Center for World Peace
+                </h3>
+
+                <a
+                  href="https://your-live-link.com" /* Replace with the actual URL */
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.liveLink}
+                  aria-label="View live project for Sadhu Vaswani Center"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                    className={styles.arrowIcon}
+                  >
+                    <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+                  </svg>
+                </a>
+              </div>
+
               <p className={styles.projectDesc}>
                 Sadhu Vaswani Center for World Peace will always be special
                 because it was my first freelance project. Seeing it come
@@ -66,11 +88,12 @@ export default function FeaturedSection(): React.JSX.Element {
                 more memorable.
               </p>
             </div>
-
-            <div className={styles.learnMore}>
-              <span>LEARN MORE</span>
-              <span>&gt;</span>
-            </div>
+            <Link href="/comming_soon">
+              <div className={styles.learnMore}>
+                <span>LEARN MORE</span>
+                {/* <span>&gt;</span> */}
+              </div>
+            </Link>
           </div>
         </div>
 

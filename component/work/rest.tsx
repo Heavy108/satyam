@@ -8,6 +8,7 @@ import sp_main from "@/assets/work/2.png";
 import form_main from "@/assets/work/4.png";
 import jv_main from "@/assets/work/3.png";
 import scripture_main from "@/assets/scripture/main.png";
+import Link from "next/link";
 
 const allProjects = [
   {
@@ -15,30 +16,35 @@ const allProjects = [
     image: sp_main,
     tags: ["UI/UX", "DEVELOPMENT"],
     title: "Studio Patang",
+    liveUrl: "https://studiopatang.com/",
   },
   {
     id: 2,
     image: jv_main,
     tags: ["WEBSITE DESIGN", "DEVELOPMENT"],
     title: "JV Venture",
+    liveUrl: "https://jv-venture-hazel.vercel.app/",
   },
   {
     id: 3,
     image: form_main,
     tags: ["DEVELOPMENT", "PRODUCT"],
     title: "Form AI",
+    // liveUrl: "https://formai.vercel.app/",
   },
   {
     id: 4,
     image: svcwp_main,
     tags: ["WEBSITE DESIGN", "DEVELOPMENT"],
     title: "Sadhu vaswani center world peace",
+    liveUrl: "https://sadhuvaswanicenter.com//",
   },
   {
     id: 5,
     image: scripture_main,
     tags: ["WEBSITE DESIGN", "DEVELOPMENT"],
     title: "Scripture",
+    liveUrl: "https://github.com/Heavy108/Scripture",
   },
 ];
 
@@ -134,17 +140,40 @@ export default function TheRest() {
         <div className={styles.cardsGrid}>
           {filteredProjects.map((project) => (
             <div key={project.id} className={styles.card}>
-              <div className={styles.imageWrapper}>
-                <Image
-                  src={project.image}
-                  alt={project.title}
-                  fill
-                  className={styles.projectImage}
-                />
-              </div>
+              <Link href="/comming_soon">
+                <div className={styles.imageWrapper}>
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    className={styles.projectImage}
+                    unoptimized
+                  />
+                </div>
+              </Link>
               <div className={styles.cardFooter}>
                 <div className={styles.cardTop}>
                   <h3 className={styles.projectTitle}>{project.title}</h3>
+
+                  {/* Assuming your project object has a 'liveUrl' or similar property */}
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={styles.liveLink}
+                      aria-label={`View live project for ${project.title}`}
+                    >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        className={styles.arrowIcon}
+                      >
+                        <path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z" />
+                      </svg>
+                    </a>
+                  )}
                 </div>
                 <div className={styles.cardBottomRow}>
                   <div className={styles.cardTags}>
@@ -154,12 +183,14 @@ export default function TheRest() {
                       </span>
                     ))}
                   </div>
-                  <button className={styles.viewCaseStudy}>
-                    <span className={styles.rollText}>
-                      <span>VIEW CASE STUDY</span>
-                      <span aria-hidden="true">VIEW CASE STUDY</span>
-                    </span>
-                  </button>
+                  <Link href="/comming_soon">
+                    <button className={styles.viewCaseStudy}>
+                      <span className={styles.rollText}>
+                        <span>VIEW CASE STUDY</span>
+                        <span aria-hidden="true">VIEW CASE STUDY</span>
+                      </span>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

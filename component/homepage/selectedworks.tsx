@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image, { type StaticImageData } from "next/image";
 import styles from "@/css/homepage/selectedwork.module.css";
-
+import Link from "next/link";
 import svcw_logo from "@/assets/svcwp/logo.png";
 import svcwp_main from "@/assets/svcwp/main.png";
 import sp_logo from "@/assets/studiopatang/logo.png";
@@ -249,13 +249,14 @@ export default function SelectedWorks(): React.JSX.Element {
                 </span>
               ))}
             </div>
-
-            <button type="button" className={styles.learnMore}>
-              <span className={styles.rollText}>
-                <span>LEARN MORE &gt;</span>
-                <span aria-hidden="true">LEARN MORE &gt;</span>
-              </span>
-            </button>
+            <Link href="/comming_soon">
+              <button type="button" className={styles.learnMore}>
+                <span className={styles.rollText}>
+                  <span>LEARN MORE &gt;</span>
+                  <span aria-hidden="true">LEARN MORE &gt;</span>
+                </span>
+              </button>
+            </Link>
           </div>
 
           <div className={styles.mainImageWrapper}>

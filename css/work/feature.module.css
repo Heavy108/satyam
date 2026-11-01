@@ -106,7 +106,26 @@
   margin: 0;
   letter-spacing: -0.02em;
 }
+.titleWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Pushes the icon to the right side of the container */
+  gap: 1.5rem;
+}
+.liveLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--foreground);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  flex-shrink: 0; /* Prevents the icon from squishing if the title is very long */
+}
 
+
+.arrowIcon {
+  width: 28px;
+  height: 28px;
+}
 .projectDesc {
   font-size: 1rem;
   line-height: 1.6;

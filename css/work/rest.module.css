@@ -165,8 +165,24 @@
 .cardTop {
   min-width: 0;
   width: 100%;
+  display: flex;
+  justify-content: space-between; 
+  align-items: center;
+  gap: 1rem;
+}
+.liveLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--foreground);
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
+
+.arrowIcon {
+  width: 24px;
+  height: 24px;
+}
 .projectTitle {
   color: var(--foreground);
   font-size: 1.25rem;

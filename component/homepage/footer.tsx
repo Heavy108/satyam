@@ -9,7 +9,6 @@ import footerLogo from "@/assets/logofooter.png";
 export default function Footer(): React.JSX.Element {
   return (
     <footer className={styles.footer}>
-      {/* Top Row: Navigation Links */}
       <div className={styles.navRow}>
         <Link href="/" className={styles.navLink}>
           HOME
@@ -22,13 +21,12 @@ export default function Footer(): React.JSX.Element {
         </Link>
       </div>
 
-      {/* Bottom Row: Socials and Logo */}
       <div className={styles.bottomRow}>
         <div className={styles.socialsCol}>
           <span className={styles.socialsHeading}>ELSEWHERE</span>
           <div className={styles.socialLinks}>
             <a
-              href="#"
+              href="https://www.instagram.com/satyamsajal/"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
@@ -36,12 +34,20 @@ export default function Footer(): React.JSX.Element {
               INSTAGRAM &rarr;
             </a>
             <a
-              href="#"
+              href="https://www.linkedin.com/in/satyam-sajal-15a90325b"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.socialLink}
             >
               LINKEDIN &rarr;
+            </a>
+            <a
+              href="https://github.com/Heavy108/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.socialLink}
+            >
+              GITHUB &rarr;
             </a>
           </div>
         </div>

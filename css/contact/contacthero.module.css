@@ -24,7 +24,7 @@
 }
 
 .tagline {
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 0.126rem;
   text-transform: uppercase;
@@ -32,7 +32,7 @@
 }
 
 .heading {
-  font-size: clamp(4.5rem, 10vw, 9rem);
+  font-size: clamp(4.5rem, 10vw, 18rem);
   font-weight: 700;
   line-height: 0.85;
   letter-spacing: -0.05em;

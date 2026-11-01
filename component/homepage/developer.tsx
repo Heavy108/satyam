@@ -76,12 +76,13 @@ export default function DeveloperSection() {
           <div className={styles.contentRow} ref={contentRowRef}>
             <div className={styles.textCol}>
               <p className={styles.text}>
-                I'm a 25-year-old web developer based in Brisbane, Australia. My
-                path started in UX design, eventually graduating from QUT with a
-                Bachelor of Design in Interaction Design but somewhere between
-                wireframing a button and wondering how it actually worked, I
-                fell down the development rabbit hole and never climbed back
-                out.
+                I'm a 23-year-old developer based in Pune, India. My journey
+                into tech started with a curiosity about how things work behind
+                the screen, which eventually turned into a passion for building
+                them myself. I'm currently working as an Application Database
+                Administrator at VOIS while pursuing a B.S. in Data Science from
+                IIT Madras. I enjoy building web applications, working with
+                databases, and exploring new technologies.
               </p>
               <Link href="/contact">
                 <button type="button" className={styles.contactBtn}>
