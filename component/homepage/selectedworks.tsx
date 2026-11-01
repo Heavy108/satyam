@@ -4,23 +4,17 @@ import React, { useState, useEffect, useRef } from "react";
 import Image, { type StaticImageData } from "next/image";
 import styles from "@/css/homepage/selectedwork.module.css";
 
-import hydgen from "@/assets/hydgenlogo.png";
-import kepler from "@/assets/kepler.png";
-import cleantech from "@/assets/cleantech.png";
-import ammobia from "@/assets/ammobia.png";
-import nexus from "@/assets/nexus.png";
+import svcw_logo from "@/assets/svcwp/logo.png";
+import svcwp_main from "@/assets/svcwp/main.png";
+import sp_logo from "@/assets/studiopatang/logo.png";
+import sp_main from "@/assets/studiopatang/main.png";
+import form from "@/assets/form/logo.png";
+import form_main from "@/assets/form/main.png";
+import jv_logo from "@/assets/jv/logo.png";
+import jv_main from "@/assets/jv/main.png";
+import scripture_logo from "@/assets/scripture/logo.png";
+import scripture_main from "@/assets/scripture/main.png";
 
-import hydgenthumbnail from "@/assets/hydgenthumb.png";
-import kepleerthumbnail from "@/assets/Keplerthumb.png";
-import cleantechthumbnail from "@/assets/cleantechthumb.png";
-import ammobiathumbnail from "@/assets/Keplerthumb.png";
-import nexusthumbnail from "@/assets/nexusthumb.png";
-
-import hydgenmain from "@/assets/hydgen.png";
-import keplermain from "@/assets/keplermain.png";
-import cleantechmain from "@/assets/cleantechmain.png";
-import ammobiamain from "@/assets/amobiamain.png";
-import nexusmain from "@/assets/nexusmain.png";
 
 interface Project {
   id: number;
@@ -34,43 +28,43 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    thumbnail: hydgenthumbnail,
-    brandLogo: hydgen,
-    headline: "Turning climate data into insights.",
-    tags: ["WEBSITE DESIGN", "BRANDING"],
-    mainImage: hydgenmain,
+    thumbnail: svcwp_main,
+    brandLogo: svcw_logo,
+    headline: "A non-profit promoting global peace.",
+    tags: ["WEBSITE DESIGN", "DEVELOPMENT"],
+    mainImage: svcwp_main,
   },
   {
     id: 2,
-    thumbnail: kepleerthumbnail,
-    brandLogo: kepler,
-    headline: "Redefining digital experiences.",
+    thumbnail: sp_main,
+    brandLogo: sp_logo,
+    headline: "A creative studio celebrating Indian art and culture.",
     tags: ["UX/UI", "DEVELOPMENT"],
-    mainImage: keplermain,
+    mainImage: sp_main,
   },
   {
     id: 3,
-    thumbnail: cleantechthumbnail,
-    brandLogo: cleantech,
-    headline: "Building scalable platforms.",
-    tags: ["APP DESIGN", "PRODUCT"],
-    mainImage: cleantechmain,
+    thumbnail: jv_main,
+    brandLogo: jv_logo,
+    headline: "A venture capital and business-building firm.",
+    tags: ["WEBSITE DESIGN", "DEVELOPMENT"],
+    mainImage: jv_main,
   },
   {
     id: 4,
-    thumbnail: ammobiathumbnail,
-    brandLogo: ammobia,
-    headline: "Crafting visual identities.",
-    tags: ["BRANDING", "PRINT"],
-    mainImage: ammobiamain,
+    thumbnail: form_main,
+    brandLogo: form,
+    headline: "An interactive form-building platform.",
+    tags: ["DEVELOPMENT", "PRODUCT"],
+    mainImage: form_main,
   },
   {
     id: 5,
-    thumbnail: nexusthumbnail,
-    brandLogo: nexus,
-    headline: "Engaging user interfaces.",
-    tags: ["WEBSITE DESIGN", "3D"],
-    mainImage: nexusmain,
+    thumbnail: scripture_main,
+    brandLogo: scripture_logo,
+    headline: "A digital student magazine platform.",
+    tags: ["WEBSITE DESIGN", "DEVELOPMENT"],
+    mainImage: scripture_main,
   },
 ];
 
