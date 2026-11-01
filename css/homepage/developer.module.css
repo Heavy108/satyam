@@ -108,6 +108,50 @@
   object-fit: cover;
 }
 
+.contactBtn {
+  background-color: var(--reverse-bg);
+  color: var(--reverse-fg);
+  border: 1px solid var(--reverse-bg);
+  outline: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.rollText {
+  display: inline-flex;
+  flex-direction: column;
+  height: 1.25em;
+  line-height: 1.25em;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.rollText span {
+  display: block;
+  height: 1.25em;
+  line-height: 1.25em;
+  white-space: nowrap;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.contactBtn:hover .rollText span {
+  transform: translateY(-100%);
+}
+
+.contactBtn:hover {
+  background-color: var(--reverse-fg);
+  color: var(--reverse-bg);
+  border-color: var(--reverse-bg);
+}
 /* --- DESKTOP/TABLET OVERRIDES --- */
 @media only screen and (min-width: 768px) {
   .section {

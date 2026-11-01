@@ -7,6 +7,7 @@ import ChatSection from "@/component/homepage/chat";
 import Footer from "@/component/homepage/footer";
 import AnimatedTextStrips from "@/component/homepage/strip";
 import DeveloperSection from "@/component/homepage/developer";
+import FatCatBanner from "@/component/homepage/fatcat";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
       <Navbar />
       {/* <Hero/> */}
       <Gallery />
+      <FatCatBanner/>
 
       <DeveloperSection />
       {/* <SelectedWorks/> */}

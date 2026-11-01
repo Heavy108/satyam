@@ -1,0 +1,106 @@
+.banner {
+  /* You can switch this to var(--background) if you want the banner background to adapt to the theme */
+  background-color: var(--foreground); 
+  position: relative;
+  width: 100%;
+  height: 203px;
+  overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.leftBox,
+.rightBox {
+  display: none;
+}
+
+.middleContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 0 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Inner decorative vertical lines */
+.gridLines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.gridLines span {
+  border-right: 1px solid var(--cat);
+  height: 100%;
+}
+
+.gridLines span:last-child {
+  border-right: none;
+}
+
+/* Styles for the full FATCAT image logo */
+.brandLogo {
+  position: relative;
+  z-index: 1;
+  height: clamp(80px, 14vw, 150px);
+  width: auto;
+  object-fit: contain;
+  /* margin-bottom: 10px;  */
+}
+:global(.dark) .brandLogo {
+  filter: brightness(0) saturate(100%) invert(29%) sepia(11%) saturate(813%) hue-rotate(104deg) brightness(85%) contrast(67%);
+}
+
+.catWrapper {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+}
+
+.bigCat {
+  width: auto;
+  height: 80%;
+  max-height: 165px;
+  margin-bottom: -5px; 
+}
+
+/* --- DESKTOP ALIGNMENT --- */
+@media only screen and (min-width: 768px) {
+  .banner {
+    display: grid;
+    grid-template-columns: minmax(100px, 10vw) 1fr minmax(100px, 10vw);
+  }
+
+  .leftBox,
+  .rightBox {
+    display: block;
+    height: 100%;
+  }
+
+  .leftBox {
+    grid-column: 1 / 2;
+    border-right: 1px solid var(--cat);
+  }
+
+  .rightBox {
+    grid-column: 3 / 4;
+    border-left: 1px solid var(--cat);
+  }
+
+  .middleContent {
+    grid-column: 2 / 3;
+    padding: 0 4rem;
+  }
+}

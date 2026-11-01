@@ -7,7 +7,7 @@ import { useGSAP } from "@gsap/react";
 import styles from "@/css/homepage/developer.module.css";
 import heroImage from "@/assets/satyam.png";
 import Image from "next/image";
-
+import Link from "next/link";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function DeveloperSection() {
@@ -83,7 +83,14 @@ export default function DeveloperSection() {
                 fell down the development rabbit hole and never climbed back
                 out.
               </p>
-              <button className={styles.button}>LEARN MORE</button>
+              <Link href="/contact">
+                <button type="button" className={styles.contactBtn}>
+                  <span className={styles.rollText}>
+                    <span>LEARN MORE</span>
+                    <span aria-hidden="true">LEARN MORE</span>
+                  </span>
+                </button>
+              </Link>
             </div>
             <div className={styles.emptyCol}></div>
           </div>

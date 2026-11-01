@@ -6,16 +6,17 @@
 [data-theme="light"] {
   --background: #E9E6E3; /* Soft blue background */
   --foreground: #415147; /* Dark brown text */
-  --border-color:  rgba(65, 81, 71, 0.50);;
+  --border-color:  rgba(65, 81, 71, 0.50);
   --reverse-bg: #415147;
   --reverse-fg: #E9E6E3;
   --card-bg: #415147;
   --card-fg: #E9E6E3;
-  --tag-border: rgba(106, 12, 6, 0.25);
+  --tag-border: #E9E6E3;
   --input-placeholder: rgba(52, 33, 27, 0.5);
   --footer-bg: #415147;
   --footer-fg: #E9E6E3;
   --footer-border: #E9E6E3;
+  --cat: rgba(233, 230, 227, 0.25);
     --transition-stroke-1: #E9E6E3;
   --transition-stroke-2: #415147;
 }
@@ -24,6 +25,7 @@
 .dark,
 :root.dark,
 [data-theme="dark"] {
+  --cat:  rgba(65, 81, 71, 0.50);
   --background: #415147; /* Warm dark espresso */
   --foreground: #E9E6E3; /* Soft blue text */
   --border-color: #E9E6E3;
@@ -31,7 +33,7 @@
   --reverse-fg: #415147;
   --card-bg: #E9E6E3;
   --card-fg: #415147;
-  --tag-border: rgba(160, 189, 219, 0.3);
+  --tag-border:  rgba(65, 81, 71, 0.50);
   --input-placeholder: rgba(160, 189, 219, 0.5);
   --footer-bg: #E9E6E3;
   --footer-fg: #415147;
