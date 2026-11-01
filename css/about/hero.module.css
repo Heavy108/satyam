@@ -1,0 +1,81 @@
+.section {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 30px 1fr;
+  background-color: var(--background); 
+  border-top: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.textContent {
+  grid-row: 1 / 2;
+  padding: 3rem 1.5rem 2rem 1rem; 
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; 
+  align-items: flex-start; 
+  color: var(--foreground); 
+}
+
+.tagline {
+  font-size: clamp(0.9rem, 10vw, 2rem);
+  font-weight: 700;
+  letter-spacing: 0.126rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.heading {
+  font-size: clamp(3.5rem, 12vw, 18rem);
+  font-weight: 700;
+  line-height: 0.85;
+  letter-spacing: -0.05em;
+  margin: 0;
+  text-transform: lowercase; 
+  word-wrap: break-word; 
+
+}
+
+.imageWrapper {
+  grid-column: 1 / 3;
+  grid-row: 2 / 3;
+  position: relative;
+  width: 100%;
+  /* Provide a fallback height for mobile */
+  height: 50vh; 
+  background-color: #000;
+}
+
+.image {
+  /* Change to cover so it fills the available height without distorting */
+  object-fit: cover; 
+  width: 100%;
+  /* Force the image to respect the wrapper's height */
+  height: 100%; 
+}
+
+/* --- DESKTOP GRID LAYOUT --- */
+@media only screen and (min-width: 1024px) {
+  .section {
+    grid-template-columns: minmax(80px, 10vw) 1fr 50%;
+    grid-template-rows: 1fr;
+    
+    height: calc(100vh - 75px); 
+    overflow: hidden; 
+  }
+
+  .textContent {
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-bottom: 4rem; 
+  }
+
+  .imageWrapper {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    height: 100%; 
+  }
+  .heading{
+    margin-bottom: 3rem;
+  }
+}

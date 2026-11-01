@@ -1,0 +1,290 @@
+.caseStudy {
+  --blue: var(--background);
+  --blue-soft: #7C9FC3;
+  --brown: var(--foreground);
+  --cream: #e6ddd8;
+  --muted-link: #8ea7c1;
+  --line: var(--border-color);
+  --gutter: 1.25rem;
+  --pad: 1.25rem;
+
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--blue);
+  color: var(--brown);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Continuous vertical gutter lines */
+.lined {
+  position: relative;
+}
+
+.lined::before,
+.lined::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--line);
+  pointer-events: none;
+  z-index: 7;
+}
+
+.lined::before {
+  left: var(--gutter);
+}
+
+.lined::after {
+  right: var(--gutter);
+}
+
+/* 1. Hero + banner */
+.hero {
+  position: relative;
+  background: #e5edf5;
+}
+
+.heroImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.banner {
+  background: var(--reverse-bg);
+  color: #e6ddd8;
+  padding: 2rem var(--pad) 1.75rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+:global(.dark) .banner {
+  color: #1c120f;
+}
+
+.bannerHeadline {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.4rem, 3vw, 5rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: inherit;
+}
+
+.highlight {
+  color: #A0BDDB;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+:global(.dark) .highlight {
+  color: #1c120f;
+  opacity: 0.6;
+}
+
+.liveLink {
+  color: #8ea7c1;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.liveLink span {
+  margin-left: 0.35em;
+}
+
+.liveLink:hover {
+  color: #e6ddd8;
+}
+
+:global(.dark) .liveLink {
+  color: #1c120f;
+  opacity: 0.85;
+}
+
+:global(.dark) .liveLink:hover {
+  color: #1c120f;
+  opacity: 1;
+}
+
+/* 2. Overview */
+.blueSection {
+  border-bottom: 1px solid var(--line);
+}
+
+.overview {
+  display: grid;
+  gap: 2.5rem;
+  padding: 3rem calc(var(--gutter) + var(--pad));
+  border-bottom: 1px solid var(--line);
+}
+
+.tagline {
+  display: block;
+  margin-bottom: 0.75rem;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.overviewTitle {
+  margin: 0 0 1.25rem;
+  font-size: clamp(3rem, 6vw, 6.5rem);
+  font-weight: 700;
+  line-height: 0.9;
+  letter-spacing: -0.05em;
+}
+
+.overviewBody {
+  margin: 0;
+  max-width: 36ch;
+  font-size: clamp(0.875rem, 1.1vw, 1.1rem);
+  line-height: 1.5;
+}
+
+.meta {
+  margin: 0;
+  align-self: start;
+}
+
+.metaRow {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  align-items: center;
+  padding: 0.9rem 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 0.8rem;
+}
+
+.metaLabel {
+  font-weight: 500;
+}
+
+.metaValue {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.chip {
+  display: block;
+}
+
+.badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  background: var(--blue-soft);
+}
+
+.metaLogo {
+  display: block;
+  width: auto;
+  height: 1.25rem;
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+/* 3. Featured image, edge to edge between the gutter lines */
+.featured {
+  padding: 2.5rem var(--gutter);
+}
+
+.featuredImage {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 4. Gallery */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  /* padding: 0.75rem; */
+  /* background: #e8eef5; */
+}
+
+.galleryImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 5. Showcase */
+.showcase {
+  display: flex;
+  flex-direction: column;
+}
+
+.showcaseImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.band {
+  height: clamp(2rem, 7.5vw, 6rem);
+  background: var(--blue);
+  border-block: 1px solid var(--line);
+}
+
+/* --- Desktop --- */
+@media (min-width: 1024px) {
+  .caseStudy {
+    --gutter: 11vw;
+    --pad: 2rem;
+  }
+
+  .banner {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 75%;
+    padding: 3.5vw 4vw 2.5vw 8.3vw;
+  }
+
+  .bannerHeadline {
+    margin-bottom: 2.25vw;
+  }
+
+  .overview {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3rem;
+    padding: 4.5rem calc(var(--gutter) + var(--pad)) 5rem;
+  }
+
+  .meta {
+    margin-top: 1.5rem;
+  }
+
+  .featured {
+    padding-block: 7.5vw;
+  }
+
+  .gallery {
+    gap: 4rem;
+    /* padding: 1.5rem; */
+  }
+  .liveLink{
+    font-size: 1.25rem;
+  }
+  .metaRow {
+    font-size: 1rem;
+  }
+
+}

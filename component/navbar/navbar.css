@@ -1,0 +1,159 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #a7c1d9; 
+  border-bottom: 1px solid #8a5a54;
+}
+
+.navbar__logo {
+  display: flex;
+  align-items: center;
+}
+
+.desktopMenu {
+  display: none; 
+  align-items: center;
+  gap: 2rem;
+  font-family: sans-serif;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  color: #3b231c;
+}
+
+.separator {
+  color: #8a5a54;
+}
+
+.navLink {
+  margin: 0;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  transition: opacity 0.2s;
+}
+
+.navLink:hover {
+  opacity: 0.7;
+}
+
+.contactButton {
+  background-color: #3b231c; 
+  color: #ffffff;
+  text-decoration: none;
+  border: none;
+  padding: 0.75rem 2rem;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  transition: background-color 0.2s;
+}
+
+.contactButton:hover {
+  background-color: #5d1e11;
+}
+
+.mobileMenuButton {
+  display: block; 
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #3b231c;
+  padding: 0.5rem;
+}
+
+.mobileSidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #f4f4f4; 
+  color: #5d1e11;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.open {
+  transform: translateX(0);
+}
+
+.sidebarHeader {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #c9c9c9;
+}
+
+.closeButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #5d1e11;
+}
+
+.sidebarContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 3rem;
+}
+
+.sidebarLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebarLinks li a {
+  font-size: 4rem;
+  font-weight: bold;
+  letter-spacing: -2px;
+  text-decoration: none;
+  color: inherit;
+  border-bottom: 1px solid #c9c9c9;
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.sidebarLinks li:last-child a {
+  border-bottom: none;
+}
+
+.navNumber {
+  font-size: 1rem;
+  font-weight: normal;
+  letter-spacing: normal;
+}
+
+.sidebarFooter {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 3rem;
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+}
+
+.sidebarFooter a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (min-width: 768px) {
+  .desktopMenu {
+    display: flex; 
+  }
+  
+  .mobileMenuButton {
+    display: none; 
+  }
+}

@@ -1,0 +1,85 @@
+.strip {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  background: var(--background);
+  color: var(--foreground);
+  font-size: 0.65rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.975rem; /* 150% */
+  letter-spacing: 0.117rem;
+  text-transform: uppercase;
+  border-top: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* only one strip */
+.strip1 {
+  position: relative;
+}
+
+/* moving container */
+.moving-text {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+}
+
+/* animation */
+.moving-left {
+  animation: slideLeft 85s linear infinite;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+}
+
+.word {
+  /* margin-right: 0.25rem; */
+  font-size: 1rem;
+}
+
+.separator {
+  margin: 1rem 2rem;
+  
+}
+
+.strip span {
+  font-size: 1rem;
+}
+
+/* .text {
+  padding: 0.38rem 1.78rem;
+} */
+
+@keyframes slideLeft {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+@media only screen and (min-width: 768px) {
+  .strip span {
+    font-size: 1rem;
+  }
+
+}
+
+@media only screen and (min-width: 1440px) {
+  .strip span {
+    /* font-size: 1.5rem; */
+  }
+  .word{
+    /* font-size: 1.5rem; */
+  }
+
+.separator{
+  margin: 1.5rem 3rem;
+}
+}

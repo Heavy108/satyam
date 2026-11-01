@@ -1,0 +1,38 @@
+.gallerySection {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column; /* Stack vertically on mobile */
+  background-color: var(--background); /* Matches the theme background */
+  transition: background-color 0.3s ease;
+}
+
+.imageWrapperLeft,
+.imageWrapperRight {
+  width: 100%;
+  display: flex;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Tablet & Desktop Layout */
+@media only screen and (min-width: 768px) {
+  .gallerySection {
+    flex-direction: row; /* Side-by-side on larger screens */
+    align-items: stretch;
+  }
+  
+  .imageWrapperLeft {
+    /* Adjust this percentage based on the exact visual weight you prefer */
+    width: 65%; 
+  }
+  
+  .imageWrapperRight {
+    width: 35%;
+  }
+}

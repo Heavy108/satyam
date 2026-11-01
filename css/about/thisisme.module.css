@@ -1,0 +1,253 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--background);
+  color: var(--foreground);
+  border-top: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.leftColumn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.leftHeader {
+  padding: 1.5rem;
+}
+
+.tagline {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  opacity: 0.7;
+}
+
+.heading {
+  font-size: clamp(3rem, 8vw, 4rem);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  margin: 0;
+  color: var(--foreground);
+}
+.animWord {
+  display: inline-block;
+  margin-right: 0.25em; /* Spacing between the animated words */
+}
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.image {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: relative !important;
+}
+
+.imageCaption {
+  display: block;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-top: 1rem;
+  opacity: 0.7;
+}
+
+.rightColumn {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bioSection {
+}
+
+.subHeading {
+  font-size: clamp(1.6rem, 5vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.02em;
+  padding: 1.5rem;
+  color: var(--foreground);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.bioText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  font-weight: 500;
+  padding: 1.5rem;
+}
+
+.bioText p {
+  margin: 0;
+}
+
+.button {
+  margin-top: 2rem;
+  padding: 1rem 2rem;
+  background-color: var(--reverse-bg);
+  color: var(--reverse-fg);
+  border: 1px solid var(--reverse-bg);
+  outline: none;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.rollText {
+  display: inline-flex;
+  flex-direction: column;
+  height: 1.25em;
+  line-height: 1.25em;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.rollText span {
+  display: block;
+  height: 1.25em;
+  line-height: 1.25em;
+  white-space: nowrap;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.button:hover .rollText span {
+  transform: translateY(-100%);
+}
+
+.button:hover {
+  background-color: var(--reverse-fg);
+  color: var(--reverse-bg);
+  border-color: var(--reverse-bg);
+}
+
+.toolkitSection {
+  padding: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.toolkitHeading {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin: 0 0 1.5rem 0;
+}
+
+.toolkitCategory {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
+}
+
+.toolkitCategory:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.categoryHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.icon {
+  font-family: monospace;
+  font-size: 1.2rem;
+}
+
+.categoryTitle {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.skills span {
+  padding: 0.25rem 0.75rem;
+  border: 1px solid var(--border-color);
+  font-family: monospace;
+  font-size: 0.75rem;
+  text-transform: lowercase;
+}
+
+@media only screen and (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .heading {
+   margin-bottom: 1rem;
+
+  }
+  .subHeading {
+    padding:2rem 1.5rem;
+  }
+
+  .leftColumn {
+    width: 50%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    border-right: 1px solid var(--border-color);
+    border-bottom: none;
+    /* justify-content: space-between; */
+  }
+
+  .leftHeader {
+    padding: 4rem 3rem 0 3rem;
+  }
+
+  .imageWrapper {
+    height: 80vh;
+    padding: 0 2rem 2rem 2rem;
+  }
+
+  .rightColumn {
+    width: 50%;
+  }
+.bioText {
+   /* padding: 1.5rem 3rem 1.5rem 3rem; */
+    max-width: 800px;
+
+
+  }
+  .bioSection {
+  }
+
+  .toolkitSection {
+    /* padding: 4rem; */
+  }
+}
