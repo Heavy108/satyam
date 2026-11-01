@@ -5,10 +5,9 @@ import Image, { type StaticImageData } from "next/image";
 import styles from "@/css/homepage/capabilities.module.css";
 
 // Import your actual images here
-import webDesignImg from "@/assets/web_design.png"; 
-import brandingImg from "@/assets/branding.png"; 
-import presentationImg from "@/assets/pres_design.png"; 
-import reportImg from "@/assets/report_design.png"; 
+import webDesignImg from "@/assets/jv/main.png"; 
+import brandingImg from "@/assets/svcwp/main.png"; 
+import presentationImg from "@/assets/form/main.png"; 
 
 interface Capability {
   id: string;
@@ -20,28 +19,22 @@ interface Capability {
 const capabilitiesData: Capability[] = [
   {
     id: "01",
-    title: "Website Design",
-    tags: ["CLIMATE TECH", "SUSTAINABILITY", "ECOMMERCE"],
+    title: "Front End",
+    tags: ["UI DEVELOPMENT", "RESPONSIVE DESIGN", "INTERACTIVE EXPERIENCES"],
     image: webDesignImg,
-  }, //[cite: 1, 2, 3]
+  },
   {
     id: "02",
-    title: "Branding",
-    tags: ["LOGO DESIGN", "BRAND BOOK", "MARKETING COLLATERAL"],
+    title: "Back End",
+    tags: ["API DEVELOPMENT", "DATABASE DESIGN", "SERVER ARCHITECTURE"],
     image: brandingImg,
-  }, //[cite: 1, 2, 3]
+  },
   {
     id: "03",
-    title: "Presentation Design",
-    tags: ["PITCH DECK", "BUSINESS PRESENTATIONS"],
+    title: "Product Development",
+    tags: ["PRODUCT STRATEGY", "MVP DEVELOPMENT", "END-TO-END SOLUTIONS"],
     image: presentationImg,
-  }, //[cite: 1, 2]
-  {
-    id: "04",
-    title: "Report Design",
-    tags: ["REPORT DESIGN", "DATA VISUALIZATION", "BROCHURES"],
-    image: reportImg,
-  }, //[cite: 1, 2]
+  },
 ];
 
 export default function Capabilities(): React.JSX.Element {
@@ -84,5 +77,5 @@ export default function Capabilities(): React.JSX.Element {
         ))}
       </div>
     </section>
-  ); //[cite: 1, 2, 3]
+  ); 
 }

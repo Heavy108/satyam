@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "@/css/contact/contacthero.module.css";
 
-import worksImg from "@/assets/workhero.png";
+import worksImg from "@/assets/contacthero.png";
 
 export default function ContactSection(): React.JSX.Element {
   return (
@@ -12,7 +12,7 @@ export default function ContactSection(): React.JSX.Element {
       <div className={styles.leftGutter}></div>
 
       <div className={styles.textContent}>
-        <span className={styles.tagline}>DON'T BE SHY</span>
+        <span className={styles.tagline}>I am Shy, you don’t have to be.</span>
         <h2 className={styles.heading}>
           contact
           <br />

@@ -77,11 +77,14 @@ export default function Contact(): React.JSX.Element {
               <rect width="20" height="16" x="2" y="4" rx="2" />
               <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
             </svg>
-            migs.bello@gmail.com
+            satyam739901@gmail.com
           </a>
 
           <div className={styles.socialLinks}>
-            <a href="#" className={styles.socialItem}>
+            <a
+              href="https://www.instagram.com/satyamsajal/"
+              className={styles.socialItem}
+            >
               <svg
                 width="14"
                 height="14"
@@ -98,7 +101,7 @@ export default function Contact(): React.JSX.Element {
               </svg>
               INSTAGRAM
             </a>
-            <a href="#" className={styles.socialItem}>
+            {/* <a href="#" className={styles.socialItem}>
               <svg
                 width="14"
                 height="14"
@@ -113,8 +116,11 @@ export default function Contact(): React.JSX.Element {
                 <path d="m10 15 5-3-5-3z" />
               </svg>
               YOUTUBE
-            </a>
-            <a href="#" className={styles.socialItem}>
+            </a> */}
+            <a
+              href="https://www.linkedin.com/in/satyam-sajal-15a90325b"
+              className={styles.socialItem}
+            >
               <svg
                 width="14"
                 height="14"
