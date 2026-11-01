@@ -12,16 +12,17 @@ export default function ChatSection(): React.JSX.Element {
     <section className={styles.section}>
       {/* Header Row */}
       <div className={styles.headerRow}>
-        <div className={styles.emptyBox}></div>
+        <div className={styles.leftBox}></div>
         <div className={styles.headerContent}>
           <span className={styles.tagline}>WANT TO</span>
           <h2 className={styles.heading}>Chat?</h2>
         </div>
+        <div className={styles.rightBox}></div>
       </div>
 
       {/* Content Row */}
       <div className={styles.contentRow}>
-        <div className={styles.emptyBox}></div>
+        <div className={styles.leftBox}></div>
         <div className={styles.mainContent}>
           <div className={styles.textContent}>
             <p>Got a project in mind? I'd love to hear about it.</p>
@@ -40,11 +41,12 @@ export default function ChatSection(): React.JSX.Element {
               width={2560}
               height={800}
               className={styles.image}
-              sizes="(max-width: 768px) 100vw, 60vw"
+              // sizes="(max-width: 768px) 100vw, 60vw"
             />
           </div>
         </div>
+        <div className={styles.rightBox}></div>
       </div>
     </section>
-  ); 
+  );
 }

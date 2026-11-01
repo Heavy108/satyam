@@ -1,24 +1,25 @@
 .section {
   width: 100%;
-  background-color: #c9d3bb; 
-  color: #6d1e10; 
-  display: flex;
-  justify-content: center;
-  padding: 0 1rem; 
-}
-
-.wrapper {
-  width: 100%;
-  max-width: 1200px;
-  border-left: 1px solid rgba(109, 30, 16, 0.3);
-  border-right: 1px solid rgba(109, 30, 16, 0.3);
+  background-color: var(--background);
+  color: var(--foreground); 
   display: flex;
   flex-direction: column;
 }
 
-.header {
-  padding: 5rem 2rem 1.5rem 2rem;
-  border-bottom: 1px solid rgba(109, 30, 16, 0.3);
+.headerRow, 
+.interactiveRow {
+  display: flex;
+  flex-direction: column;
+}
+
+.leftBox,
+.rightBox {
+  display: none;
+}
+
+.headerContent {
+  padding: 5rem 1.5rem 1.5rem 1.5rem;
+  border-bottom: 1px solid var(--foreground);
 }
 
 .tagline {
@@ -50,7 +51,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  border-bottom: 1px solid rgba(109, 30, 16, 0.3);
+  border-bottom: 1px solid var(--foreground);
 }
 
 .textCol {
@@ -73,8 +74,8 @@
 .button {
   padding: 0.75rem 1.5rem;
   background: transparent;
-  border: 1px solid #6d1e10;
-  color: #6d1e10;
+  border: 1px solid var(--foreground);
+  color: var(--foreground);
   font-size: 0.8rem;
   font-weight: 700;
   text-transform: uppercase;
@@ -83,8 +84,8 @@
 }
 
 .button:hover {
-  background: #6d1e10;
-  color: #c9d3bb;
+  background: var(--foreground);
+  color: var(--background);
 }
 
 .emptyCol {
@@ -97,11 +98,6 @@
   min-height: 350px;
 }
 
-.animatedImage {
-  position: absolute;
-  object-fit: cover;
-  z-index: 10;
-}
 .animatedImageWrapper {
   position: absolute;
   z-index: 10;
@@ -111,16 +107,68 @@
 .nextImage {
   object-fit: cover;
 }
+
 /* --- DESKTOP/TABLET OVERRIDES --- */
 @media only screen and (min-width: 768px) {
+  .section {
+    display: grid;
+    grid-template-columns: minmax(100px, 10vw) 1fr minmax(100px, 10vw);
+    grid-template-rows: auto auto; 
+  }
+  
+  .headerRow, 
+  .interactiveRow {
+    display: contents; 
+  }
+
+  .leftBox,
+  .rightBox {
+    display: block;
+  }
+
+  /* Left Sidebar Settings */
+  .leftBox {
+    grid-column: 1 / 2;
+    border-right: 1px solid var(--foreground);
+  }
+
+  /* Right Sidebar Settings */
+  .rightBox {
+    grid-column: 3 / 4;
+    border-left: 1px solid var(--foreground);
+  }
+
+  .headerRow .leftBox,
+  .headerRow .rightBox {
+    grid-row: 1 / 2;
+    border-bottom: 1px solid var(--foreground);
+  }
+
+  .interactiveRow .leftBox,
+  .interactiveRow .rightBox {
+    grid-row: 2 / 3;
+  }
+
+  .headerContent {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    padding: 5rem 4rem 1.5rem 4rem; 
+    border-bottom: 1px solid var(--foreground);
+  }
+
+  .interactiveArea {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+  }
+
   .contentRow {
     flex-direction: row;
   }
   
   .textCol {
     width: 50%;
-    border-right: 1px solid rgba(109, 30, 16, 0.3);
-    padding: 3rem 3rem 3rem 2rem;
+    border-right: 1px solid var(--foreground);
+    padding: 3rem 4rem;
   }
   
   .emptyCol {

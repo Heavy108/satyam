@@ -4,40 +4,40 @@
 :root,
 :root.light,
 [data-theme="light"] {
-  --background: #A0BDDB; /* Soft blue background */
-  --foreground: #34211B; /* Dark brown text */
-  --border-color: rgba(106, 12, 6, 0.25);
-  --reverse-bg: #34211B;
-  --reverse-fg: #A0BDDB;
-  --card-bg: #34211B;
-  --card-fg: #D4C9C3;
+  --background: #E9E6E3; /* Soft blue background */
+  --foreground: #415147; /* Dark brown text */
+  --border-color:  rgba(65, 81, 71, 0.50);;
+  --reverse-bg: #415147;
+  --reverse-fg: #E9E6E3;
+  --card-bg: #415147;
+  --card-fg: #E9E6E3;
   --tag-border: rgba(106, 12, 6, 0.25);
   --input-placeholder: rgba(52, 33, 27, 0.5);
-  --footer-bg: #34211B;
-  --footer-fg: #A0BDDB;
-  --footer-border: rgba(160, 189, 219, 0.4);
-    --transition-stroke-1: #A0BDDB;
-  --transition-stroke-2: #34211B;
+  --footer-bg: #415147;
+  --footer-fg: #E9E6E3;
+  --footer-border: #E9E6E3;
+    --transition-stroke-1: #E9E6E3;
+  --transition-stroke-2: #415147;
 }
 
 /* Dark Theme */
 .dark,
 :root.dark,
 [data-theme="dark"] {
-  --background: #1c120f; /* Warm dark espresso */
-  --foreground: #A0BDDB; /* Soft blue text */
-  --border-color: rgba(160, 189, 219, 0.22);
-  --reverse-bg: #A0BDDB;
-  --reverse-fg: #1c120f;
-  --card-bg: #A0BDDB;
-  --card-fg: #1c120f;
+  --background: #415147; /* Warm dark espresso */
+  --foreground: #E9E6E3; /* Soft blue text */
+  --border-color: #E9E6E3;
+  --reverse-bg: #E9E6E3;
+  --reverse-fg: #415147;
+  --card-bg: #E9E6E3;
+  --card-fg: #415147;
   --tag-border: rgba(160, 189, 219, 0.3);
   --input-placeholder: rgba(160, 189, 219, 0.5);
-  --footer-bg: #A0BDDB;
-  --footer-fg: #34211B;
-  --footer-border: rgba(106, 12, 6, 0.25);
-   --transition-stroke-2: #A0BDDB;
-  --transition-stroke-1: #34211B;
+  --footer-bg: #E9E6E3;
+  --footer-fg: #415147;
+  --footer-border: #415147;
+   --transition-stroke-2: #E9E6E3;
+  --transition-stroke-1: #415147;
 }
 
 /* Base Body Styles */
@@ -91,7 +91,7 @@ select {
 /* Dark theme scrollbar overrides for full browser compatibility */
 .dark,
 .dark * {
-  scrollbar-color: #A0BDDB #1c120f;
+  scrollbar-color: #E9E6E3 #1c120f;
 }
 
 .dark::-webkit-scrollbar-track,
@@ -101,7 +101,7 @@ select {
 
 .dark::-webkit-scrollbar-thumb,
 .dark *::-webkit-scrollbar-thumb {
-  background-color: #A0BDDB;
+  background-color: #E9E6E3;
   border: 3px solid #1c120f;
 }
 

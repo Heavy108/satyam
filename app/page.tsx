@@ -12,15 +12,16 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <Hero/>
-      <DeveloperSection/>
-      {/* <Gallery/> */}
+      {/* <Hero/> */}
+      <Gallery />
+
+      <DeveloperSection />
       {/* <SelectedWorks/> */}
-      <AnimatedTextStrips/>
+      <AnimatedTextStrips />
       {/* <Capabilities/> */}
 
-      {/* <ChatSection/> */}
-      <Footer/>
+      <ChatSection/>
+      <Footer />
     </div>
   );
 }

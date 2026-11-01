@@ -7,6 +7,7 @@ import { useGSAP } from "@gsap/react";
 import styles from "@/css/homepage/developer.module.css";
 import heroImage from "@/assets/satyam.png";
 import Image from "next/image";
+
 gsap.registerPlugin(ScrollTrigger);
 
 export default function DeveloperSection() {
@@ -14,15 +15,13 @@ export default function DeveloperSection() {
   const areaRef = useRef<HTMLDivElement>(null);
   const contentRowRef = useRef<HTMLDivElement>(null);
   const bottomRowRef = useRef<HTMLDivElement>(null);
-  const imageRef = useRef<HTMLImageElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null); // Changed to match animatedImageWrapper
 
   useGSAP(
     () => {
       const mm = gsap.matchMedia();
 
-      // Desktop & Tablet: Trigger the scrolling animation
       mm.add("(min-width: 769px)", () => {
-        // Set the initial bounding box to match the right column
         gsap.set(imageRef.current, {
           top: 0,
           left: "50%",
@@ -30,7 +29,6 @@ export default function DeveloperSection() {
           height: () => contentRowRef.current?.offsetHeight || 0,
         });
 
-        // Animate to fill the bottom row on scroll
         gsap.to(imageRef.current, {
           top: () => contentRowRef.current?.offsetHeight || 0,
           left: "0%",
@@ -62,16 +60,19 @@ export default function DeveloperSection() {
 
   return (
     <section className={styles.section} ref={sectionRef}>
-      <div className={styles.wrapper}>
-        {/* Header Section */}
-        <div className={styles.header}>
+      <div className={styles.headerRow}>
+        <div className={styles.leftBox}></div>
+        <div className={styles.headerContent}>
           <span className={styles.tagline}>THE</span>
           <h2 className={styles.title}>developer.</h2>
         </div>
+        <div className={styles.rightBox}></div>
+      </div>
 
-        {/* Animation Container */}
+      <div className={styles.interactiveRow}>
+        <div className={styles.leftBox}></div>
+
         <div className={styles.interactiveArea} ref={areaRef}>
-          {/* Top Row: Text on Left, Placeholder for Image on Right */}
           <div className={styles.contentRow} ref={contentRowRef}>
             <div className={styles.textCol}>
               <p className={styles.text}>
@@ -84,14 +85,11 @@ export default function DeveloperSection() {
               </p>
               <button className={styles.button}>LEARN MORE</button>
             </div>
-            {/* Empty column that holds the space for the image's starting point */}
             <div className={styles.emptyCol}></div>
           </div>
 
-          {/* Bottom Row: Placeholder for the Image's ending point */}
           <div className={styles.bottomRow} ref={bottomRowRef}></div>
 
-          {/* The actual moving Image */}
           <div className={styles.animatedImageWrapper} ref={imageRef}>
             <Image
               src={heroImage}
@@ -103,6 +101,8 @@ export default function DeveloperSection() {
             />
           </div>
         </div>
+
+        <div className={styles.rightBox}></div>
       </div>
     </section>
   );
