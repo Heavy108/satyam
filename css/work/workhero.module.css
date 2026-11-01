@@ -33,16 +33,19 @@
   text-transform: lowercase; 
 }
 
-.imageWrapper {
+.videoWrapper {
   grid-column: 1 / 3; /* Spans full width on mobile below the text */
   grid-row: 2 / 3;
   position: relative;
   width: 100%;
+  height: 50vh; /* Fallback height for mobile */
   background-color: #000;
 }
 
-.image {
-  object-fit: contain;
+.video {
+  object-fit: cover; 
+  width: 100%;
+  height: 100%; 
 }
 
 /* --- DESKTOP GRID LAYOUT --- */
@@ -51,7 +54,7 @@
     /* 
       Col 1: Matches left gutter of 'The Rest' 
       Col 2: Text area takes remaining space of the left half 
-      Col 3: Image area takes exactly 50% 
+      Col 3: Video area takes exactly 50% 
     */
     grid-template-columns: minmax(80px, 10vw) 1fr 50%;
     grid-template-rows: 1fr;
@@ -69,7 +72,7 @@
     border-right: 1px solid var(--border-color); 
   }
 
-  .imageWrapper {
+  .videoWrapper {
     grid-column: 3 / 4;
     grid-row: 1 / 2;
     height: 100%;

@@ -1,10 +1,7 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
 import styles from "@/css/work/workhero.module.css";
-
-import worksImg from "@/assets/workhero.png";
 
 export default function WorksSection(): React.JSX.Element {
   return (
@@ -15,13 +12,15 @@ export default function WorksSection(): React.JSX.Element {
         <h2 className={styles.heading}>works.</h2>
       </div>
 
-      <div className={styles.imageWrapper}>
-        <Image
-          src={worksImg}
-          alt="Digital drawing on an iPad"
-          width={1260}
-          height={800}
-          className={styles.image}
+      <div className={styles.videoWrapper}>
+        <video
+          src="/workvideo.mp4" 
+          autoPlay
+          loop
+          muted
+          playsInline
+          className={styles.video}
+          aria-label="Works showcase video"
         />
       </div>
     </section>

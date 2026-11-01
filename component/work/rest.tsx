@@ -3,54 +3,57 @@ import React, { useState } from "react";
 import Image from "next/image";
 import styles from "@/css/work/rest.module.css";
 
-import hydgenmain from "@/assets/hydgen.png";
-import keplermain from "@/assets/keplermain.png";
-import cleantechmain from "@/assets/cleantechmain.png";
-import ammobiamain from "@/assets/amobiamain.png";
-import nexusmain from "@/assets/nexusmain.png";
+import svcw_logo from "@/assets/svcwp/logo.png";
+import svcwp_main from "@/assets/work/1.png";
+import sp_logo from "@/assets/studiopatang/logo.png";
+import sp_main from "@/assets/work/2.png";
+import form from "@/assets/form/logo.png";
+import form_main from "@/assets/work/4.png";
+import jv_logo from "@/assets/jv/logo.png";
+import jv_main from "@/assets/work/3.png";
+import scripture_logo from "@/assets/scripture/logo.png";
+import scripture_main from "@/assets/scripture/main.png";
+
+
+
 const allProjects = [
   {
     id: 1,
-    title: "Kepler Labs",
-    image: keplermain,
-    tags: ["WEBSITE DESIGN", "BRANDING"],
+    image: svcwp_main,
+    tags: ["WEBSITE DESIGN", "DEVELOPMENT"],
+    title: "Sadhu vaswani center world peace",
   },
   {
     id: 2,
-    title: "Ammobia",
-    image: ammobiamain,
-    tags: ["WEBSITE DESIGN", "BRANDING"],
+    image: sp_main,
+    tags: ["UX/UI", "DEVELOPMENT"],
+    title: "Studio Patang",
   },
   {
     id: 3,
-    title: "Clean tech",
-    image: cleantechmain,
-    tags: ["REPORT DESIGN"],
+    image: jv_main,
+    tags: ["WEBSITE DESIGN", "DEVELOPMENT"],
+    title: "JV Venture",
   },
   {
     id: 4,
-    title: "Nexus",
-    image: nexusmain,
-    tags: ["WEBSITE DESIGN", "BRANDING"],
+    image: form_main,
+    tags: ["DEVELOPMENT", "PRODUCT"],
+    title: "Form AI",
   },
   {
     id: 5,
-    title: "Gray Bio",
-    image: hydgenmain,
-    tags: ["BRANDING", "PITCH DECK"],
+    image: scripture_main,
+    tags: ["WEBSITE DESIGN", "DEVELOPMENT"],
+    title: "Scripture",
   },
-  {
-    id: 6,
-    title: "Energize capital",
-    image: keplermain,
-    tags: ["WEBSITE DESIGN"],
-  },
+
 ];
 const filters = [
   "ALL",
   "WEBSITE DESIGN",
-  "BRANDING",
-  "PRESENTATION DESIGN",
+  "DEVELOPMENT",
+  "UI/UX",
   "REPORT DESIGN",
 ];
 
