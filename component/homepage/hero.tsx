@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styles from "@/css/homepage/hero.module.css";
 import LaptopMockup from "@/assets/laptop.webp.png";
+import Link from "next/link";
 export default function Hero() {
   return (
     <section className={styles.heroSection}>
@@ -29,12 +30,14 @@ export default function Hero() {
               long on something most people probably won't notice.
             </p>
           </div>
-          <button className={styles.button}>
-            <span className={styles.rollText}>
-              <span>Learn More</span>
-              <span aria-hidden="true">Learn More</span>
-            </span>
-          </button>
+          <Link href="/about">
+            <button className={styles.button}>
+              <span className={styles.rollText}>
+                <span>Learn More</span>
+                <span aria-hidden="true">Learn More</span>
+              </span>
+            </button>
+          </Link>
         </div>
 
         <div className={styles.imageWrapper}>
