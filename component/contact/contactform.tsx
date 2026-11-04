@@ -63,7 +63,7 @@ export default function Contact(): React.JSX.Element {
         <h2 className={styles.heading}>say hello.</h2>
 
         <div className={styles.contactLinks}>
-          <a href="mailto:migs.bello@gmail.com" className={styles.emailLink}>
+          <a href="mailto:satyam739901@@gmail.com" className={styles.emailLink}>
             <svg
               width="16"
               height="16"
